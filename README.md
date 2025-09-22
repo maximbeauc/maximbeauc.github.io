@@ -11,5 +11,8 @@ I have experience in back-end coding languages: Java, Python, and C++.
 - Github
 - MS Suite
 
+## Projects
+I have worked on two projects: [Connect 4](https://github.com/maximbeauc/Connect-4) and [Ultimate Tic-Tac-Toe](https://github.com/maximbeauc/Ultimate-Tic-Tac-Toe), both in Java. They can be found on my Github.
+
 ## Contact
 You can reach me at [LinkedIn](https://www.linkedin.com/maximbeauc) or [GitHub](https://github.com/maximbeauc).
