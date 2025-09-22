@@ -1,5 +1,5 @@
 # Maxim Beauchemin
-Welcome to my personal portfolio! I’m a first year undergraduate Mechatronics Enginneerings student at the University of Waterloo.
+Welcome to my personal portfolio! I’m a first year undergraduate Mechatronics Engineering student at the University of Waterloo.
 
 ## About Me
 I have experience in back-end coding languages: Java, Python, and C++.
