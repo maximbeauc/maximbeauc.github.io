@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact — Maxim Beauchemin</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">MB</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html" class="nav-cta active">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-eyebrow">Let's connect</p>
+      <h1 class="page-title">Contact</h1>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- LEFT: Info -->
+        <div class="contact-info" data-animate>
+          <h2>Get in Touch</h2>
+          <p>I'm a first-year Mechatronics Engineering student at the University of Waterloo actively looking for <strong>co-op or internship opportunities</strong> in mechanical, software, and mechatronics engineering.</p>
+          <p>Whether you're a recruiter, a fellow engineer, or just want to chat about a project — feel free to reach out.</p>
+
+          <div class="contact-links">
+            <a href="mailto:ma2beauc@uwaterloo.ca" class="contact-link-card">
+              <div class="clc-icon">✉️</div>
+              <div class="clc-text">
+                <span class="clc-label">Email</span>
+                <span class="clc-value">ma2beauc@uwaterloo.ca</span>
+              </div>
+            </a>
+            <a href="https://github.com/maximbeauc" target="_blank" rel="noopener" class="contact-link-card">
+              <div class="clc-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </div>
+              <div class="clc-text">
+                <span class="clc-label">GitHub</span>
+                <span class="clc-value">github.com/maximbeauc</span>
+              </div>
+            </a>
+            <a href="https://linkedin.com/in/maximbeauc" target="_blank" rel="noopener" class="contact-link-card">
+              <div class="clc-icon">🔗</div>
+              <div class="clc-text">
+                <span class="clc-label">LinkedIn</span>
+                <span class="clc-value">linkedin.com/in/maximbeauc</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="resume-buttons" style="margin-top: 2rem;">
+            <a href="assets/Resumes/Software_Resume.pdf" download class="btn btn-primary">⬇ Software Resume</a>
+            <a href="assets/Resumes/Mechanical_Resume.pdf" download class="btn btn-secondary">⬇ Mechanical Resume</a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form (Formspree) -->
+        <div class="contact-form-wrap" data-animate>
+          <form
+            class="contact-form"
+            id="contactForm"
+            action="https://formspree.io/f/mjgaezwn"
+            method="POST"
+            novalidate
+          >
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="jane@company.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Co-op Opportunity / General Inquiry" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Hi Maxim, I'd like to discuss..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">Send Message</button>
+            <p class="form-note" id="formNote"></p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-name">Maxim Beauchemin</span>
+      <div class="footer-links">
+        <a href="https://github.com/maximbeauc" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/maximbeauc" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <span class="footer-copy">© 2025 Maxim Beauchemin</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

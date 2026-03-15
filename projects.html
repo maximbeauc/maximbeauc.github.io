@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Projects — Maxim Beauchemin</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">MB</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="hero-eyebrow">What I've built</p>
+      <h1 class="page-title">Projects</h1>
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <div class="container">
+
+      <!-- MTE 100 FEATURED -->
+      <div class="project-featured" id="mte100" data-animate>
+        <div class="pf-header">
+          <h2>Autonomous Tic-Tac-Toe Robot</h2>
+          <p class="pf-desc">Designed and built a fully autonomous robot that plays Tic-Tac-Toe against a human opponent — with a <strong>0% loss rate</strong>. The project spanned the full engineering pipeline: mechanical design in SolidWorks, 3D-printed fabrication of custom components, motor and sensor integration, and a C++ decision algorithm that determines the optimal move for any board state.</p>
+          <ul class="pf-bullets">
+            <li>Designed and modeled robotic components in SolidWorks and fabricated parts using 3D printing.</li>
+            <li>Integrated colour sensors and motor control systems to autonomously detect board state and place pieces.</li>
+            <li>Implemented C++ control logic enabling the robot to play against human opponents with a 0% loss rate.</li>
+          </ul>
+          <div class="pf-tags">
+            <span class="tag">C++</span>
+            <span class="tag">SolidWorks</span>
+            <span class="tag">3D Printing</span>
+            <span class="tag">Sensors</span>
+            <span class="tag">Motor Control</span>
+            <span class="tag">Embedded Systems</span>
+          </div>
+          <a href="https://github.com/maximbeauc/Autonomous-Tic-Tac-Toe-Robot-Logic" target="_blank" rel="noopener" class="btn btn-primary">View Code on GitHub →</a>
+        </div>
+
+        <div class="pf-video-section">
+          <h3>Project Demo</h3>
+          <div class="video-container">
+            <iframe
+              class="project-video"
+              src="https://www.youtube.com/embed/DEFRh5HGYi0"
+              title="MTE 100 Project Demo"
+              frameborder="0"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+      </div>
+
+      <!-- GITHUB PROJECTS -->
+      <div class="projects-grid-header">
+        <h2>GitHub Projects</h2>
+        <a href="https://github.com/maximbeauc" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">View All on GitHub</a>
+      </div>
+
+      <div class="projects-grid">
+
+        <div class="project-card" data-animate>
+          <div class="pc-top">
+            <div class="pc-lang java">Java</div>
+            <a href="https://github.com/maximbeauc/Ultimate-Tic-Tac-Toe" target="_blank" rel="noopener" class="pc-github-link" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3>Ultimate Tic-Tac-Toe</h3>
+          <p>A graphical implementation of Ultimate Tic-Tac-Toe in Java, using the Paint class for rendering and custom game state management. Built as a Grade 12 CS final project.</p>
+          <div class="pc-tags">
+            <span class="tag">Java</span><span class="tag">Game State</span><span class="tag">OOP</span>
+          </div>
+          <div class="pc-actions">
+            <a href="https://github.com/maximbeauc/Ultimate-Tic-Tac-Toe" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-animate>
+          <div class="pc-top">
+            <div class="pc-lang java">Java</div>
+            <a href="https://github.com/maximbeauc/Connect-4" target="_blank" rel="noopener" class="pc-github-link" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3>Connect 4</h3>
+          <p>A complete two-player Connect 4 game in Java with win-detection across rows, columns, and diagonals. Created as a Grade 11 CS final project.</p>
+          <div class="pc-tags">
+            <span class="tag">Java</span><span class="tag">Game Logic</span>
+          </div>
+          <div class="pc-actions">
+            <a href="https://github.com/maximbeauc/Connect-4" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card" data-animate>
+          <div class="pc-top">
+            <div class="pc-lang python">Python</div>
+            <a href="https://github.com/maximbeauc/Conways-Game-of-Life" target="_blank" rel="noopener" class="pc-github-link" aria-label="View on GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+            </a>
+          </div>
+          <h3>Conway's Game of Life</h3>
+          <p>An interactive visualization of Conway's Game of Life built with Python and Pygame. Simulates complex emergent behaviour from simple cellular automata rules on a live grid.</p>
+          <div class="pc-tags">
+            <span class="tag">Python</span><span class="tag">Pygame</span><span class="tag">Simulation</span>
+          </div>
+          <div class="pc-actions">
+            <a href="https://github.com/maximbeauc/Conways-Game-of-Life" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-name">Maxim Beauchemin</span>
+      <div class="footer-links">
+        <a href="https://github.com/maximbeauc" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://linkedin.com/in/maximbeauc" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <span class="footer-copy">© 2025 Maxim Beauchemin</span>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
