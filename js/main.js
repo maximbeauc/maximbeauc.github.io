@@ -184,12 +184,12 @@ async function loadGitHubStats() {
 // LeetCode
 async function loadLeetCodeStats() {
   try {
-    const res  = await fetch('https://leetcode-stats-api.herokuapp.com/Bestofmax07');
+    const res  = await fetch('https://alfa-leetcode-api.onrender.com/Bestofmax07/solved');
     const data = await res.json();
 
     if (data.status === 'error') throw new Error(data.message);
 
-    document.getElementById('lc-total').textContent  = data.totalSolved;
+    document.getElementById('lc-total').textContent  = data.easySolved + data.mediumSolved + data.hardSolved;
     document.getElementById('lc-easy').textContent   = data.easySolved;
     document.getElementById('lc-medium').textContent = data.mediumSolved;
     document.getElementById('lc-hard').textContent   = data.hardSolved;
