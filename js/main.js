@@ -108,12 +108,12 @@ if (lightbox) {
     });
   });
 
-  lbClose.addEventListener('click', closeLightbox);
   document.getElementById('lbPrev').addEventListener('click', () => showPhoto(current - 1));
   document.getElementById('lbNext').addEventListener('click', () => showPhoto(current + 1));
 
+  // Click anywhere except the arrow buttons to close
   lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
+    if (!e.target.closest('.lb-prev, .lb-next')) closeLightbox();
   });
 
   document.addEventListener('keydown', (e) => {
