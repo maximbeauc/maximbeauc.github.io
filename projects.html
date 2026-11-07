@@ -4,133 +4,276 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Projects — Maxim Beauchemin</title>
+  <meta name="description" content="Projects by Maxim Beauchemin, from Waterloo Rocketry firmware to an autonomous Tic-Tac-Toe robot." />
+  <meta name="theme-color" content="#0d1b2a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://maximbeauc.github.io/projects.html" />
+  <meta property="og:title" content="Projects — Maxim Beauchemin" />
+  <meta property="og:description" content="Projects by Maxim Beauchemin, from Waterloo Rocketry firmware to an autonomous Tic-Tac-Toe robot." />
+  <meta property="og:image" content="https://maximbeauc.github.io/assets/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <noscript><style>[data-animate] { opacity: 1; }</style></noscript>
 </head>
 <body>
 
+  <a href="#main" class="skip-link">Skip to content</a>
+
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">MB</a>
+      <a href="index.html" class="nav-logo" aria-label="Home">MB</a>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
         <li><a href="projects.html" class="active">Projects</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <section class="page-hero">
-    <div class="container">
-      <p class="hero-eyebrow">What I've built</p>
-      <h1 class="page-title">Projects</h1>
-    </div>
-  </section>
+  <main id="main">
 
-  <section class="projects-section">
-    <div class="container">
+    <section class="page-hero">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-glow hero-glow-gold"></div>
+      </div>
+      <div class="container">
+        <p class="hero-eyebrow">What I've built</p>
+        <h1 class="page-title">Projects</h1>
+        <p class="page-subtitle">From rocket firmware to a robot that never loses at Tic-Tac-Toe.</p>
+      </div>
+    </section>
 
-      <!-- MTE 100 FEATURED -->
-      <div class="project-featured" id="mte100" data-animate>
-        <div class="pf-header">
-          <h2>Autonomous Tic-Tac-Toe Robot</h2>
-          <p class="pf-desc">Designed and built a fully autonomous robot that plays Tic-Tac-Toe against a human opponent — with a <strong>0% loss rate</strong>. The project spanned the full engineering pipeline: mechanical design in SolidWorks, 3D-printed fabrication of custom components, motor and sensor integration, and a C++ decision algorithm that determines the optimal move for any board state.</p>
-          <ul class="pf-bullets">
-            <li>Implemented C++ control logic enabling the robot to play against human opponents with a 0% loss rate.</li>
-            <li>Integrated colour sensors and motor control systems to autonomously detect board state and place pieces.</li>
-            <li>Modeled and 3D printed components in SolidWorks for piece placement and motor mounting.</li>
-          </ul>
-          <div class="pf-tags">
-            <span class="tag">C++</span>
-            <span class="tag">SolidWorks</span>
-            <span class="tag">3D Printing</span>
-            <span class="tag">Sensors</span>
-            <span class="tag">Motor Control</span>
-            <span class="tag">Embedded Systems</span>
+    <section class="section projects-section">
+      <div class="container">
+
+        <!-- WATERLOO ROCKETRY -->
+        <article class="project-block" id="rocketry">
+          <div class="pf-header" data-animate>
+            <p class="pf-label">Design Team · Jun 2026 – Present</p>
+            <h2>Waterloo Rocketry — Controls Subteam</h2>
+            <p class="pf-desc">Waterloo Rocketry is the University of Waterloo's student rocketry design team. On the Controls Subteam, I work on the firmware for the rocket's canards — the small fins near the nose that help control it in flight — with a focus on making that system reliable, observable, and well tested.</p>
+            <ul class="pf-bullets">
+              <li>Led the redesign of the error log system, encoding entries from <strong>128 to 32 bytes</strong> and aggregating repeated logs so 400 Hz tasks can't flood it.</li>
+              <li>Designed FreeRTOS motor telemetry in C, sending current, angle, and temperature over CAN at frequencies set by the flight state.</li>
+              <li>Wrote C++ unit tests in Docker for the canard fin actuation firmware on an STM32H733, using GoogleTest and the Fake Function Framework (FFF) to simulate successful and unsuccessful UART, CAN, and I2C transmissions.</li>
+            </ul>
+            <div class="tags pf-tags">
+              <span class="tag">C</span>
+              <span class="tag">C++</span>
+              <span class="tag">FreeRTOS</span>
+              <span class="tag">STM32</span>
+              <span class="tag">CAN</span>
+              <span class="tag">UART</span>
+              <span class="tag">I2C</span>
+              <span class="tag">GoogleTest</span>
+              <span class="tag">FFF</span>
+              <span class="tag">Docker</span>
+            </div>
           </div>
-          <a href="https://github.com/maximbeauc/Autonomous-Tic-Tac-Toe-Robot-Logic" target="_blank" rel="noopener" class="btn btn-primary">View Code on GitHub →</a>
+
+          <div class="spec-panel" data-animate>
+            <div class="spec-art">
+              <svg class="rocket-svg" viewBox="0 0 320 220" aria-hidden="true">
+                <g fill="#ffffff">
+                  <circle cx="40" cy="40" r="1.4" opacity="0.6"/><circle cx="92" cy="24" r="1" opacity="0.5"/>
+                  <circle cx="276" cy="30" r="1.2" opacity="0.6"/><circle cx="300" cy="150" r="1" opacity="0.4"/>
+                  <circle cx="62" cy="118" r="1" opacity="0.45"/><circle cx="250" cy="196" r="1.3" opacity="0.5"/>
+                  <circle cx="120" cy="64" r="1.1" opacity="0.5"/><circle cx="160" cy="18" r="0.9" opacity="0.4"/>
+                </g>
+                <path d="M24 214 C 70 206, 112 186, 140 160" fill="none" stroke="#c9a84c" stroke-width="1.5" stroke-dasharray="4 6" opacity="0.7"/>
+                <g transform="translate(190 96) rotate(40)">
+                  <path d="M-6 38 Q0 72 6 38 Z" fill="#e8c96a"/>
+                  <path d="M-3 38 Q0 58 3 38 Z" fill="#ffffff" opacity="0.85"/>
+                  <path d="M-11 8 L-27 30 L-27 38 L-11 28 Z" fill="#1b2e44" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M11 8 L27 30 L27 38 L11 28 Z" fill="#1b2e44" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round"/>
+                  <path d="M-11 34 L-11 -36 Q-11 -58 0 -76 Q11 -58 11 -36 L11 34 Z" fill="#24405f" stroke="#ffffff" stroke-width="1.6" stroke-linejoin="round"/>
+                  <line x1="-11" y1="0" x2="11" y2="0" stroke="#ffffff" stroke-width="1" opacity="0.35"/>
+                  <rect x="-7" y="34" width="14" height="5" rx="1" fill="#ffffff" opacity="0.85"/>
+                  <circle cx="0" cy="-14" r="4.5" fill="#0d1b2a" stroke="#ffffff" stroke-width="1.4"/>
+                  <path d="M-11 -40 L-20 -31 L-20 -27 L-11 -30 Z" fill="#c9a84c"/>
+                  <path d="M11 -40 L20 -31 L20 -27 L11 -30 Z" fill="#c9a84c"/>
+                </g>
+                <polyline points="227,89 248,108 300,108" fill="none" stroke="#e8c96a" stroke-width="1" opacity="0.8"/>
+                <text x="251" y="103" class="rocket-label">CANARDS</text>
+              </svg>
+            </div>
+            <div class="spec-rows">
+              <p class="spec-title">// At a glance</p>
+              <div class="spec-row"><span class="spec-key">Microcontroller</span><span class="spec-val">STM32H733</span></div>
+              <div class="spec-row"><span class="spec-key">RTOS</span><span class="spec-val">FreeRTOS</span></div>
+              <div class="spec-row"><span class="spec-key">Buses</span><span class="spec-val">CAN · UART · I2C</span></div>
+              <div class="spec-row"><span class="spec-key">Error log entry</span><span class="spec-val">128 B → <em>32 B</em></span></div>
+              <div class="spec-row"><span class="spec-key">Fastest tasks</span><span class="spec-val">400 Hz</span></div>
+              <div class="spec-row"><span class="spec-key">Unit tests</span><span class="spec-val">GoogleTest + FFF</span></div>
+              <div class="spec-row"><span class="spec-key">Test environment</span><span class="spec-val">Docker</span></div>
+            </div>
+          </div>
+        </article>
+
+        <!-- MTE 100 ROBOT -->
+        <article class="project-block" id="mte100">
+          <div class="pf-header" data-animate>
+            <p class="pf-label">MTE 100 Course Project · Nov 2025</p>
+            <h2>Autonomous Tic-Tac-Toe Robot</h2>
+            <p class="pf-desc">Designed and built a fully autonomous robot that plays Tic-Tac-Toe against a human opponent — with a <strong>0% loss rate across 50 games</strong>. The project spanned the full engineering pipeline: mechanical design in SolidWorks, 3D-printed fabrication of custom components, motor and sensor integration, and C++ game logic that decides the robot's next move.</p>
+            <ul class="pf-bullets">
+              <li>Integrated colour sensing to detect the board state and motor control to autonomously place the pieces chosen by the game logic, with consistent, accurate placement.</li>
+              <li>Modeled and 3D printed components in SolidWorks, including the game pieces, game board, and motor mount.</li>
+            </ul>
+            <div class="tags pf-tags">
+              <span class="tag">C++</span>
+              <span class="tag">SolidWorks</span>
+              <span class="tag">3D Printing</span>
+              <span class="tag">Sensors</span>
+              <span class="tag">Motor Control</span>
+            </div>
+            <a href="https://github.com/maximbeauc/Autonomous-Tic-Tac-Toe-Robot-Logic" target="_blank" rel="noopener" class="btn btn-primary">View Code on GitHub →</a>
+          </div>
+
+          <div data-animate>
+            <a href="assets/RobotProject/TopFrontView.jpeg" class="pf-photo" data-lightbox data-caption="Top-front view of the full robot, game board, and pieces">
+              <img src="assets/RobotProject/TopFrontView.jpeg" alt="Top-front view of the robot: a gantry over the black game board, with red and blue game pieces and a piece dispenser" width="1400" height="1050" />
+            </a>
+            <p class="photo-hint">Tap or click any photo to enlarge</p>
+          </div>
+
+          <div class="pf-extra" data-animate>
+            <h3>A Closer Look</h3>
+            <div class="gallery">
+              <a href="assets/RobotProject/WheelView.jpeg" class="gallery-item" data-lightbox data-caption="Wheel view — the carriage riding along the gantry rail">
+                <img src="assets/RobotProject/WheelView.jpeg" alt="Carriage with two motors and a wheel riding on the gantry's aluminum rail" width="1050" height="1400" loading="lazy" />
+                <span class="gi-caption">Wheel view</span>
+              </a>
+              <a href="assets/RobotProject/AligningTrack.jpeg" class="gallery-item" data-lightbox data-caption="Aligning track for the gantry's wheels">
+                <img src="assets/RobotProject/AligningTrack.jpeg" alt="Track with red wheels running alongside the game board" width="1050" height="1400" loading="lazy" />
+                <span class="gi-caption">Aligning track</span>
+              </a>
+              <a href="assets/RobotProject/RackAndPinion.jpeg" class="gallery-item" data-lightbox data-caption="Rack-and-pinion drive">
+                <img src="assets/RobotProject/RackAndPinion.jpeg" alt="Close-up of a blue pinion gear meshing with a rack" width="1050" height="1400" loading="lazy" />
+                <span class="gi-caption">Rack and pinion</span>
+              </a>
+              <a href="assets/RobotProject/ClawExtended.jpeg" class="gallery-item" data-lightbox data-caption="Claw, extended">
+                <img src="assets/RobotProject/ClawExtended.jpeg" alt="The robot's cylindrical claw with its prongs extended" width="1050" height="1400" loading="lazy" />
+                <span class="gi-caption">Claw extended</span>
+              </a>
+              <a href="assets/RobotProject/ClawContracted.jpeg" class="gallery-item" data-lightbox data-caption="Claw, contracted">
+                <img src="assets/RobotProject/ClawContracted.jpeg" alt="The robot's cylindrical claw with its prongs pulled in" width="1050" height="1400" loading="lazy" />
+                <span class="gi-caption">Claw contracted</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="pf-extra" data-animate>
+            <h3>Project Demo</h3>
+            <div class="video-container">
+              <iframe
+                class="project-video"
+                src="https://www.youtube.com/embed/DEFRh5HGYi0"
+                title="Autonomous Tic-Tac-Toe Robot demo"
+                loading="lazy"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- GITHUB PROJECTS -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head-row" data-animate>
+          <div class="section-head">
+            <p class="section-label">More on GitHub</p>
+            <h2 class="section-title">Where it started</h2>
+            <p class="section-intro">The games and simulations I built while learning to code in high school and first year.</p>
+          </div>
+          <a href="https://github.com/maximbeauc" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">View All on GitHub</a>
         </div>
 
-        <div class="pf-video-section">
-          <h3>Project Demo</h3>
-          <div class="video-container">
-            <iframe
-              class="project-video"
-              src="https://www.youtube.com/embed/DEFRh5HGYi0"
-              title="MTE 100 Project Demo"
-              frameborder="0"
-              allowfullscreen>
-            </iframe>
+        <div class="projects-grid">
+
+          <div class="project-card" data-animate>
+            <div class="pc-top">
+              <div class="pc-lang java">Java</div>
+              <a href="https://github.com/maximbeauc/Ultimate-Tic-Tac-Toe" target="_blank" rel="noopener" class="pc-github-link" aria-label="Ultimate Tic-Tac-Toe on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+            <h3>Ultimate Tic-Tac-Toe</h3>
+            <p>A graphical implementation of Ultimate Tic-Tac-Toe in Java, using the Paint class for rendering and custom game state management. Built as a Grade 12 CS final project.</p>
+            <div class="pc-tags">
+              <span class="tag">Java</span><span class="tag">Game State</span><span class="tag">OOP</span>
+            </div>
+            <div class="pc-actions">
+              <a href="https://github.com/maximbeauc/Ultimate-Tic-Tac-Toe" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub →</a>
+            </div>
           </div>
+
+          <div class="project-card" data-animate>
+            <div class="pc-top">
+              <div class="pc-lang java">Java</div>
+              <a href="https://github.com/maximbeauc/Connect-4" target="_blank" rel="noopener" class="pc-github-link" aria-label="Connect 4 on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+            <h3>Connect 4</h3>
+            <p>A complete two-player Connect 4 game in Java with win-detection across rows, columns, and diagonals. Created as a Grade 11 CS final project.</p>
+            <div class="pc-tags">
+              <span class="tag">Java</span><span class="tag">Game Logic</span>
+            </div>
+            <div class="pc-actions">
+              <a href="https://github.com/maximbeauc/Connect-4" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub →</a>
+            </div>
+          </div>
+
+          <div class="project-card" data-animate>
+            <div class="pc-top">
+              <div class="pc-lang python">Python</div>
+              <a href="https://github.com/maximbeauc/Conways-Game-of-Life" target="_blank" rel="noopener" class="pc-github-link" aria-label="Conway's Game of Life on GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+            <h3>Conway's Game of Life</h3>
+            <p>An interactive cellular automaton simulation built with Python and Pygame. Features toggleable cells, play/pause controls, and step-by-step execution to explore emergent behaviour from simple rules.</p>
+            <div class="pc-tags">
+              <span class="tag">Python</span><span class="tag">Pygame</span><span class="tag">Simulation</span>
+            </div>
+            <div class="pc-actions">
+              <a href="https://github.com/maximbeauc/Conways-Game-of-Life" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub →</a>
+            </div>
+          </div>
+
         </div>
       </div>
+    </section>
 
-      <!-- GITHUB PROJECTS -->
-      <div class="projects-grid-header">
-        <h2>GitHub Projects</h2>
-        <a href="https://github.com/maximbeauc" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">View All on GitHub</a>
+    <section class="cta-strip">
+      <div class="hero-bg"><div class="hero-grid"></div></div>
+      <div class="container">
+        <h2>Like what you see?</h2>
+        <p>There's more on my GitHub, or you can reach out directly — I'd love to chat.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-gold">Get in Touch</a>
+          <a href="https://github.com/maximbeauc" target="_blank" rel="noopener" class="btn btn-ghost">View My GitHub</a>
+        </div>
       </div>
+    </section>
 
-      <div class="projects-grid">
-
-        <div class="project-card" data-animate>
-          <div class="pc-top">
-            <div class="pc-lang java">Java</div>
-            <a href="https://github.com/maximbeauc/Ultimate-Tic-Tac-Toe" target="_blank" rel="noopener" class="pc-github-link" aria-label="View on GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-          </div>
-          <h3>Ultimate Tic-Tac-Toe</h3>
-          <p>A graphical implementation of Ultimate Tic-Tac-Toe in Java, using the Paint class for rendering and custom game state management. Built as a Grade 12 CS final project.</p>
-          <div class="pc-tags">
-            <span class="tag">Java</span><span class="tag">Game State</span><span class="tag">OOP</span>
-          </div>
-          <div class="pc-actions">
-            <a href="https://github.com/maximbeauc/Ultimate-Tic-Tac-Toe" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub →</a>
-          </div>
-        </div>
-
-        <div class="project-card" data-animate>
-          <div class="pc-top">
-            <div class="pc-lang java">Java</div>
-            <a href="https://github.com/maximbeauc/Connect-4" target="_blank" rel="noopener" class="pc-github-link" aria-label="View on GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-          </div>
-          <h3>Connect 4</h3>
-          <p>A complete two-player Connect 4 game in Java with win-detection across rows, columns, and diagonals. Created as a Grade 11 CS final project.</p>
-          <div class="pc-tags">
-            <span class="tag">Java</span><span class="tag">Game Logic</span>
-          </div>
-          <div class="pc-actions">
-            <a href="https://github.com/maximbeauc/Connect-4" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub →</a>
-          </div>
-        </div>
-
-        <div class="project-card" data-animate>
-          <div class="pc-top">
-            <div class="pc-lang python">Python</div>
-            <a href="https://github.com/maximbeauc/Conways-Game-of-Life" target="_blank" rel="noopener" class="pc-github-link" aria-label="View on GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-            </a>
-          </div>
-          <h3>Conway's Game of Life</h3>
-          <p>An interactive cellular automaton simulation built with Python and Pygame. Features toggleable cells, play/pause controls, and step-by-step execution to explore emergent behaviour from simple rules.</p>
-          <div class="pc-tags">
-            <span class="tag">Python</span><span class="tag">Pygame</span><span class="tag">Simulation</span>
-          </div>
-          <div class="pc-actions">
-            <a href="https://github.com/maximbeauc/Conways-Game-of-Life" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">GitHub →</a>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
+  </main>
 
   <footer class="footer">
     <div class="container footer-inner">
@@ -139,11 +282,23 @@
         <a href="https://github.com/maximbeauc" target="_blank" rel="noopener">GitHub</a>
         <a href="https://linkedin.com/in/maximbeauc" target="_blank" rel="noopener">LinkedIn</a>
         <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
         <a href="contact.html">Contact</a>
       </div>
-      <span class="footer-copy">© 2025 Maxim Beauchemin</span>
+      <span class="footer-copy">© <span id="year">2026</span> Maxim Beauchemin</span>
     </div>
   </footer>
+
+  <!-- PHOTO LIGHTBOX -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Close">×</button>
+    <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Previous photo">‹</button>
+    <figure class="lb-figure">
+      <img class="lb-img" id="lbImg" src="assets/RobotProject/TopFrontView.jpeg" alt="" />
+      <figcaption class="lb-caption"><span id="lbCaption"></span><span class="lb-count" id="lbCount"></span></figcaption>
+    </figure>
+    <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Next photo">›</button>
+  </div>
 
   <script src="js/main.js"></script>
 </body>

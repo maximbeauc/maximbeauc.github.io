@@ -9,54 +9,119 @@ const navLinks  = document.getElementById('navLinks');
 
 window.addEventListener('scroll', () => {
   navbar.classList.toggle('scrolled', window.scrollY > 20);
-});
+}, { passive: true });
 
-navToggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-  navToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
-});
+const setMenu = (open) => {
+  navLinks.classList.toggle('open', open);
+  navToggle.classList.toggle('open', open);
+  navToggle.setAttribute('aria-expanded', open);
+};
+
+navToggle.addEventListener('click', () => setMenu(!navLinks.classList.contains('open')));
 
 navLinks.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => navLinks.classList.remove('open'));
+  link.addEventListener('click', () => setMenu(false));
 });
 
 
 // ---- SCROLL ANIMATIONS ----
+// Anything with data-animate fades up when it scrolls into view.
+// Elements that appear together (like a row of cards) are staggered.
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 const animateOnScroll = (selector, options = {}) => {
   const elements = document.querySelectorAll(selector);
   if (!elements.length) return;
 
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    elements.forEach(el => el.classList.add('visible'));
+    return;
+  }
+
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const delay = options.stagger
-          ? Array.from(elements).indexOf(entry.target) * 110
-          : 0;
+    entries
+      .filter(entry => entry.isIntersecting)
+      .forEach((entry, i) => {
+        const delay = options.stagger ? i * 110 : 0;
         setTimeout(() => entry.target.classList.add('visible'), delay);
         observer.unobserve(entry.target);
-      }
-    });
+      });
   }, { threshold: options.threshold || 0.12 });
 
   elements.forEach(el => observer.observe(el));
 };
 
-animateOnScroll('[data-animate]',     { stagger: true });
-animateOnScroll('.highlight-card',    { stagger: true, threshold: 0.1 });
-animateOnScroll('.project-card',      { stagger: true, threshold: 0.1 });
-animateOnScroll('.project-featured',  { threshold: 0.08 });
+animateOnScroll('[data-animate]', { stagger: true });
 
 
-// ---- SKILL BARS (About page) ----
-const skillSection = document.querySelector('.about-skills');
-if (skillSection) {
-  const skillObserver = new IntersectionObserver((entries) => {
+// ---- COURSE GRADE BARS (About page) ----
+const gradeSection = document.querySelector('.course-grades');
+if (gradeSection) {
+  const gradeObserver = new IntersectionObserver((entries) => {
     if (entries[0].isIntersecting) {
-      document.querySelectorAll('.skill-fill').forEach(bar => bar.classList.add('animated'));
-      skillObserver.disconnect();
+      gradeSection.querySelectorAll('.skill-fill').forEach(bar => bar.classList.add('animated'));
+      gradeObserver.disconnect();
     }
-  }, { threshold: 0.2 });
-  skillObserver.observe(skillSection);
+  }, { threshold: 0.3 });
+  gradeObserver.observe(gradeSection);
+}
+
+
+// ---- PHOTO LIGHTBOX (Projects page) ----
+// Every link with data-lightbox opens in the viewer instead of a new page.
+// Arrow keys / buttons flip through the photos, Esc or clicking outside closes it.
+const lightbox = document.getElementById('lightbox');
+if (lightbox) {
+  const photos    = Array.from(document.querySelectorAll('[data-lightbox]'));
+  const lbImg     = document.getElementById('lbImg');
+  const lbCaption = document.getElementById('lbCaption');
+  const lbCount   = document.getElementById('lbCount');
+  const lbClose   = document.getElementById('lbClose');
+  let current = 0;
+
+  const showPhoto = (index) => {
+    current = (index + photos.length) % photos.length;
+    const photo = photos[current];
+    lbImg.src = photo.getAttribute('href');
+    lbImg.alt = photo.querySelector('img').alt;
+    lbCaption.textContent = photo.dataset.caption || '';
+    lbCount.textContent   = (current + 1) + ' / ' + photos.length;
+  };
+
+  const openLightbox = (index) => {
+    showPhoto(index);
+    lightbox.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    lbClose.focus();
+  };
+
+  const closeLightbox = () => {
+    lightbox.classList.remove('open');
+    document.body.style.overflow = '';
+    photos[current].focus();
+  };
+
+  photos.forEach((photo, i) => {
+    photo.addEventListener('click', (e) => {
+      e.preventDefault();
+      openLightbox(i);
+    });
+  });
+
+  lbClose.addEventListener('click', closeLightbox);
+  document.getElementById('lbPrev').addEventListener('click', () => showPhoto(current - 1));
+  document.getElementById('lbNext').addEventListener('click', () => showPhoto(current + 1));
+
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) closeLightbox();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (!lightbox.classList.contains('open')) return;
+    if (e.key === 'Escape')     closeLightbox();
+    if (e.key === 'ArrowLeft')  showPhoto(current - 1);
+    if (e.key === 'ArrowRight') showPhoto(current + 1);
+  });
 }
 
 
@@ -142,25 +207,12 @@ function isValidEmail(email) {
 }
 
 
-// ---- SMOOTH ANCHOR SCROLL (#mte100 etc.) ----
-document.querySelectorAll('a[href*="#"]').forEach(anchor => {
-  anchor.addEventListener('click', (e) => {
-    const href = anchor.getAttribute('href');
-    const hashIndex = href.indexOf('#');
-    if (hashIndex === -1) return;
+// ---- FOOTER YEAR ----
+const yearEl = document.getElementById('year');
+if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-    const targetId = href.slice(hashIndex + 1);
-    const isSamePage = !href.includes('.html') || window.location.pathname.endsWith('projects.html');
-    if (!isSamePage) return;
 
-    const target = document.getElementById(targetId);
-    if (target) {
-      e.preventDefault();
-      window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 90, behavior: 'smooth' });
-    }
-  });
-});
-
+// ---- LIVE STATS (Home page) ----
 // GitHub
 async function loadGitHubStats() {
   try {
@@ -168,6 +220,8 @@ async function loadGitHubStats() {
       fetch('https://api.github.com/users/maximbeauc'),
       fetch('https://api.github.com/users/maximbeauc/repos?per_page=100')
     ]);
+    if (!userRes.ok || !reposRes.ok) throw new Error('GitHub API returned ' + (userRes.ok ? reposRes.status : userRes.status));
+
     const user  = await userRes.json();
     const repos = await reposRes.json();
 
@@ -206,5 +260,8 @@ async function loadLeetCodeStats() {
   }
 }
 
-loadGitHubStats();
-loadLeetCodeStats();
+// Only fetch on the page that shows the stats (saves GitHub's 60 requests/hour limit)
+if (document.getElementById('gh-repos')) {
+  loadGitHubStats();
+  loadLeetCodeStats();
+}

@@ -4,206 +4,248 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>About — Maxim Beauchemin</title>
+  <meta name="description" content="Get to know Maxim Beauchemin: Mechatronics Engineering student at the University of Waterloo, Dean's Scholar, bilingual, and 2nd degree black belt." />
+  <meta name="theme-color" content="#0d1b2a" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://maximbeauc.github.io/about.html" />
+  <meta property="og:title" content="About — Maxim Beauchemin" />
+  <meta property="og:description" content="Get to know Maxim Beauchemin: Mechatronics Engineering student at the University of Waterloo, Dean's Scholar, bilingual, and 2nd degree black belt." />
+  <meta property="og:image" content="https://maximbeauc.github.io/assets/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
   <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <noscript><style>[data-animate] { opacity: 1; }</style></noscript>
 </head>
 <body>
 
+  <a href="#main" class="skip-link">Skip to content</a>
+
   <nav class="navbar" id="navbar">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo">MB</a>
+      <a href="index.html" class="nav-logo" aria-label="Home">MB</a>
       <ul class="nav-links" id="navLinks">
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html" class="active">About</a></li>
+        <li><a href="experience.html">Experience</a></li>
         <li><a href="projects.html">Projects</a></li>
         <li><a href="contact.html" class="nav-cta">Contact</a></li>
       </ul>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <button type="button" class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-controls="navLinks" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </div>
   </nav>
 
-  <section class="page-hero">
-    <div class="container">
-      <p class="hero-eyebrow">Get to know me</p>
-      <h1 class="page-title">About Me</h1>
-    </div>
-  </section>
+  <main id="main">
 
-  <section class="about-main">
-    <div class="container">
+    <section class="page-hero">
+      <div class="hero-bg">
+        <div class="hero-grid"></div>
+        <div class="hero-glow hero-glow-gold"></div>
+      </div>
+      <div class="container">
+        <p class="hero-eyebrow">Get to know me</p>
+        <h1 class="page-title">About Me</h1>
+        <p class="page-subtitle">A bit about who I am, what I work with, and what I do for fun.</p>
+      </div>
+    </section>
 
-      <!-- BIO + SKILLS -->
-      <div class="about-grid">
-        <div class="about-bio" data-animate>
-          <h2>Hi, I'm Maxim.</h2>
-          <p>I'm a first-year Mechatronics Engineering student at the <strong>University of Waterloo</strong>. At school, I love hanging out with friends, and honestly, I love doing schoolwork. However, my favourite night of the week is Monday night at poker club.</p>
-          <p>I'm most passionate about learning new things. While software development and mechanical design are currently my main fascinations, I'm eager to explore anything math and engineering related. Math was my favourite subject in elementary and high school, and I've always been fascinated by the logical thinking required in engineering.</p>
-          <p>My programming journey started in elementary school, where the block-coding Scratch peaked my interests. Later in high school, I built games in Java for my computer science courses and served as the <strong>Executive of the Computer Science Club</strong>. I've since expanded into Python, C/C++, C#, and web technologies. 
-          <p>In my free time, I enjoy practicing karate, where I earned a <strong>2nd Degree Black Belt</strong>, and teaching as a karate instructor — which has taught me discipline, leadership, and how to work with others effectively.</p>
-          <p>I completed my first co-op as a <strong>Software Developer Student at Innovative Automation Inc.</strong>, where I led multiple cross-department Continuous Improvement projects spanning C#, Blazor, SQL, and SolidWorks integrations. The role gave me real exposure to engineering concepts through close collaboration with experienced professionals across the company.</p>
-          <p>I'm actively looking for my next co-op or internship opportunity, whether in southern Ontario, or anywhere else in Canada.</p>
+    <!-- BIO + SKILLS -->
+    <section class="section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-bio" data-animate>
+            <h2>Hi, I'm Maxim.</h2>
+            <p>I'm a Mechatronics Engineering student at the <strong>University of Waterloo</strong>, currently on my second co-op term. At school, I love hanging out with friends, and honestly, I love doing schoolwork. However, my favourite night of the week is Monday night at poker club.</p>
+            <p>I'm most passionate about learning new things. While embedded firmware, controls, and software development are currently my main fascinations, I'm eager to explore anything math and engineering related. Math was my favourite subject in elementary and high school, and I've always been fascinated by the logical thinking required in engineering.</p>
+            <p>My programming journey started in elementary school, where the block-coding Scratch piqued my interest. Later in high school, I built games in Java for my computer science courses and served as the <strong>Executive of the Computer Science Club</strong>. I've since expanded into C/C++, C#, Python, and web technologies, and most recently, firmware for microcontrollers.</p>
+            <p>My first co-op was as a <strong>Software Developer Student at Innovative Automation Inc.</strong>, where I led cross-department Continuous Improvement projects in C#, Blazor, and SolidWorks. For my second co-op, I came back as a <strong>Controls Programming Student</strong>, getting much closer to the hardware with HMIs, PLCs, and computer vision. On top of that, I'm on the <strong>Controls Subteam at Waterloo Rocketry</strong>, writing firmware for the rocket's canards.</p>
+            <p>In my free time, I enjoy practicing Shotokan karate, where I earned a <strong>2nd Degree Black Belt</strong>, and teaching as a volunteer instructor — which has taught me discipline, leadership, and how to work with others effectively.</p>
+            <p>I'm actively looking for my next co-op or internship opportunity, whether in southern Ontario, or anywhere else in Canada.</p>
 
-          <div class="resume-buttons" style="margin-top: 1.75rem;">
-            <a href="assets/Resumes/Software_Resume.pdf" download class="btn btn-primary">⬇ Software Resume</a>
-            <a href="assets/Resumes/Mechanical_Resume.pdf" download class="btn btn-secondary">⬇ Mechanical Resume</a>
-          </div>
-        </div>
-
-        <div class="about-skills" data-animate>
-          <div style="height: 4rem;"></div>
-          <div class="skill-group">
-            <h4 class="skill-group-label">Programming Languages</h4>
-            <div class="tags">
-              <span class="tag">Java</span>
-              <span class="tag">Python</span>
-              <span class="tag">C / C++</span>
-              <span class="tag">C#</span>
-              <span class="tag">JavaScript</span>
-              <span class="tag">SQL (SSMS)</span>
-              <span class="tag">HTML / CSS</span>
+            <div class="resume-buttons">
+              <a href="assets/Resumes/Software_Resume.pdf" download class="btn btn-primary">⬇ Software Resume</a>
+              <a href="assets/Resumes/Controls_Resume.pdf" download class="btn btn-secondary">⬇ Controls Resume</a>
             </div>
           </div>
 
-          <div class="skill-group">
-            <h4 class="skill-group-label">Frameworks & Platforms</h4>
-            <div class="tags">
-              <span class="tag">Blazor / .NET</span>
-              <span class="tag">Bootstrap 5</span>
-              <span class="tag">Azure DevOps</span>
-              <span class="tag">Epicor ERP</span>
-              <span class="tag">GitHub</span>
+          <aside class="skills-card" data-animate>
+            <h3>Skills &amp; Tools</h3>
+
+            <div class="skill-group">
+              <h4 class="skill-group-label">Programming</h4>
+              <div class="tags">
+                <span class="tag">C</span>
+                <span class="tag">C++</span>
+                <span class="tag">C#</span>
+                <span class="tag">Java</span>
+                <span class="tag">Python</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">Bash</span>
+                <span class="tag">Excel VBA</span>
+                <span class="tag">SQL</span>
+              </div>
             </div>
-          </div>
 
-          <div class="skill-group">
-            <h4 class="skill-group-label">Engineering Tools</h4>
-            <div class="tags">
-              <span class="tag">SolidWorks</span>
-              <span class="tag">SolidWorks PDM</span>
-              <span class="tag">AutoCAD</span>
-              <span class="tag">GD&amp;T</span>
-              <span class="tag">3D Printing</span>
+            <div class="skill-group">
+              <h4 class="skill-group-label">Firmware &amp; Embedded</h4>
+              <div class="tags">
+                <span class="tag">FreeRTOS</span>
+                <span class="tag">STM32</span>
+                <span class="tag">CAN</span>
+                <span class="tag">UART</span>
+                <span class="tag">I2C</span>
+                <span class="tag">GoogleTest</span>
+                <span class="tag">Fake Function Framework</span>
+              </div>
             </div>
-          </div>
 
-          <div class="skill-group">
-            <h4 class="skill-group-label">Languages</h4>
-            <div class="tags">
-              <span class="tag">🇨🇦 English — Fluent</span>
-              <span class="tag">🇫🇷 French — Fluent</span>
+            <div class="skill-group">
+              <h4 class="skill-group-label">Controls &amp; Automation</h4>
+              <div class="tags">
+                <span class="tag">Studio 5000</span>
+                <span class="tag">FactoryTalk</span>
+                <span class="tag">OPC UA</span>
+                <span class="tag">Weintek HMI</span>
+                <span class="tag">PLC Programming</span>
+                <span class="tag">Computer Vision</span>
+              </div>
             </div>
-          </div>
 
-        </div>
-      </div> 
-
-      <!-- EXPERIENCE -->
-      <div class="experience-section" data-animate>
-        <h2>Experience</h2>
-
-        <div class="exp-card">
-          <div class="exp-header">
-            <div>
-              <h3>Software Developer Student</h3>
-              <p class="exp-company">Innovative Automation Inc. — Barrie, ON</p>
+            <div class="skill-group">
+              <h4 class="skill-group-label">Web &amp; Frameworks</h4>
+              <div class="tags">
+                <span class="tag">.NET</span>
+                <span class="tag">Blazor</span>
+                <span class="tag">HTML / CSS</span>
+                <span class="tag">REST APIs</span>
+                <span class="tag">Swagger</span>
+              </div>
             </div>
-            <span class="exp-date">Jan 2026 – Apr 2026</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Led simultaneous, cross-department Continuous Improvement initiatives, including a Blazor web app with Bootstrap 5 visualizing BOM costing data from Epicor ERP and SolidWorks PDM, saving an estimated <strong>$80,000</strong>.</li>
-            <li>Modified a SolidWorks add-in to automatically define imported sketches, saving an hour of engineering work weekly.</li>
-            <li>Reorganized the company credit card reconciliation process, improving financial tracking and saving an estimated <strong>$60,000</strong>.</li>
-          </ul>
-          <div class="exp-tags">
-            <span class="tag">C#</span><span class="tag">Blazor</span><span class="tag">Bootstrap 5</span><span class="tag">Azure DevOps</span><span class="tag">Epicor ERP</span><span class="tag">SolidWorks PDM</span>
-          </div>
-        </div>
 
-        <div class="exp-card">
-          <div class="exp-header">
-            <div>
-              <h3>Coding Instructor</h3>
-              <p class="exp-company">Codezilla Kids Ltd. — Toronto, ON</p>
+            <div class="skill-group">
+              <h4 class="skill-group-label">Tools &amp; Platforms</h4>
+              <div class="tags">
+                <span class="tag">Git / GitHub</span>
+                <span class="tag">Docker</span>
+                <span class="tag">WSL</span>
+                <span class="tag">Azure DevOps</span>
+                <span class="tag">Epicor ERP</span>
+                <span class="tag">SolidWorks</span>
+                <span class="tag">SolidWorks PDM</span>
+                <span class="tag">AutoCAD</span>
+                <span class="tag">3D Printing</span>
+              </div>
             </div>
-            <span class="exp-date">Feb 2025 – Aug 2025</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Taught programming fundamentals to groups of up to 24 students in summer coding camps.</li>
-            <li>Collaborated with instructors on parent presentations, earning a 5-star Google rating.</li>
-          </ul>
-        </div>
 
-        <div class="exp-card">
-          <div class="exp-header">
-            <div>
-              <h3>Volunteer Martial Arts Instructor</h3>
-              <p class="exp-company">Northern Karate Schools — Toronto, ON</p>
+            <div class="skill-group">
+              <h4 class="skill-group-label">Languages</h4>
+              <div class="tags">
+                <span class="tag">🇨🇦 English — Fluent</span>
+                <span class="tag">🇫🇷 French — Fluent</span>
+              </div>
             </div>
-            <span class="exp-date">Jun 2020 – Aug 2025</span>
-          </div>
-          <ul class="exp-bullets">
-            <li>Volunteered as a karate instructor during school year classes and summer camps.</li>
-            <li>Collaborated with instructors to improve class structure and student engagement.</li>
-          </ul>
+          </aside>
         </div>
       </div>
+    </section>
 
-      <!-- EDUCATION -->
-      <div class="education-section" data-animate>
-        <h2>Education</h2>
-        <div class="edu-card">
+    <!-- EDUCATION -->
+    <section class="section section-alt">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="section-label">Education</p>
+          <h2 class="section-title">Where I'm learning</h2>
+        </div>
+
+        <div class="edu-card" data-animate>
           <div class="edu-logo">UW</div>
           <div class="edu-info">
             <h3>University of Waterloo</h3>
             <p class="edu-degree">Bachelor of Applied Science — Mechatronics Engineering</p>
-            <p class="edu-year">Sep 2025 – Present &nbsp;·&nbsp; Average: 98%</p>
-            <p class="edu-note">Waterloo's Mechatronics program is world-renowned for its co-op model, integrating academic terms with real-world engineering work terms across software, mechanical, and electrical disciplines.</p>
+            <p class="edu-year">Sep 2025 – Present &nbsp;·&nbsp; Cumulative Average: 98%</p>
+
+            <div class="award">
+              <span class="award-icon">🏆</span>
+              <div>
+                <strong>Dean's Scholar Award</strong>
+                <span>Highest academic achiever in the program</span>
+              </div>
+            </div>
+
+            <p class="courses-label">Relevant Courses</p>
+            <div class="course-grades">
+              <div class="course">
+                <div class="course-head"><span class="course-name">Circuits</span><span class="course-pct">100%</span></div>
+                <div class="skill-bar"><div class="skill-fill" style="--pct: 100%"></div></div>
+              </div>
+              <div class="course">
+                <div class="course-head"><span class="course-name">Digital Computation</span><span class="course-pct">97%</span></div>
+                <div class="skill-bar"><div class="skill-fill" style="--pct: 97%"></div></div>
+              </div>
+              <div class="course">
+                <div class="course-head"><span class="course-name">Data Structures and Algorithms</span><span class="course-pct">94%</span></div>
+                <div class="skill-bar"><div class="skill-fill" style="--pct: 94%"></div></div>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="edu-card" style="margin-top: 1rem;">
-          <div class="edu-logo" style="font-size: 0.75rem; text-align:center; line-height:1.2;">NHS</div>
+
+        <div class="edu-card" data-animate>
+          <div class="edu-logo">NSS</div>
           <div class="edu-info">
             <h3>Northern Secondary School</h3>
             <p class="edu-degree">Ontario Secondary School Diploma</p>
             <p class="edu-year">Sep 2021 – Aug 2025</p>
-            <p class="edu-note">Grade 12 AP Calculus and Vectors Award. President of the Math Club. Organized weekly meetings teaching advanced topics including complex numbers.</p>
+            <p class="edu-note">Grade 12 AP Calculus and Vectors Award. President of the Math Club, organizing weekly meetings that taught advanced topics like complex numbers.</p>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- LEADERSHIP -->
-      <div class="education-section" data-animate>
-        <h2>Leadership &amp; Activities</h2>
-        <div class="highlights-grid" style="margin-top: 1.5rem;">
-          <div class="highlight-card">
+    <!-- BEYOND ENGINEERING -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head" data-animate>
+          <p class="section-label">Off the Clock</p>
+          <h2 class="section-title">Beyond Engineering</h2>
+        </div>
+
+        <div class="highlights-grid cols-3">
+          <div class="highlight-card" data-animate>
             <div class="hc-icon">🥋</div>
             <h3>2nd Degree Black Belt</h3>
-            <p>Karate practitioner and part-time instructor at Northern Karate Schools. Taught classes and summer camps for over five years.</p>
+            <p>Shotokan karate practitioner and volunteer instructor at Northern Karate Schools, where I taught classes and summer camps for over five years.</p>
           </div>
-          <div class="highlight-card">
-            <div class="hc-icon">🧮</div>
-            <h3>President of Math Club</h3>
-            <p>Organized weekly meetings at Northern Secondary School, teaching advanced topics like complex numbers and competition math.</p>
+          <div class="highlight-card" data-animate>
+            <div class="hc-icon">♠️</div>
+            <h3>Waterloo Poker Club</h3>
+            <p>Monday nights are for the Waterloo Poker Club, easily my favourite night of the week.</p>
           </div>
-          <div class="highlight-card">
-            <div class="hc-icon">🤖</div>
-            <h3>DEEP at U of T</h3>
-            <p>Adapted machine learning programs in Python to recognize and classify images as part of the U of T DEEP program.</p>
+          <div class="highlight-card" data-animate>
+            <div class="hc-icon">♟️</div>
+            <h3>Waterloo Chess Club</h3>
+            <p>Member of the Waterloo Chess Club, playing at an 1800 rating.</p>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <section class="cta-strip">
+      <div class="hero-bg"><div class="hero-grid"></div></div>
+      <div class="container">
+        <h2>Interested in working together?</h2>
+        <p>I'm always happy to chat about co-op roles, projects, or engineering in general.</p>
+        <div class="cta-actions">
+          <a href="contact.html" class="btn btn-gold">Get in Touch</a>
+        </div>
+      </div>
+    </section>
 
-  <section class="cta-strip">
-    <div class="container">
-      <h2>Interested in working together?</h2>
-      <a href="contact.html" class="btn btn-light">Get in Touch</a>
-    </div>
-  </section>
+  </main>
 
   <footer class="footer">
     <div class="container footer-inner">
@@ -211,10 +253,11 @@
       <div class="footer-links">
         <a href="https://github.com/maximbeauc" target="_blank" rel="noopener">GitHub</a>
         <a href="https://linkedin.com/in/maximbeauc" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+        <a href="projects.html">Projects</a>
         <a href="contact.html">Contact</a>
       </div>
-      <span class="footer-copy">© 2025 Maxim Beauchemin</span>
+      <span class="footer-copy">© <span id="year">2026</span> Maxim Beauchemin</span>
     </div>
   </footer>
 
