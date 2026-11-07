@@ -1,20 +1,25 @@
 # Hi, I'm Maxim 👋
 
-**Mechatronics Engineering student @ University of Waterloo** · 98% average · Bilingual EN/FR
+**Mechatronics Engineering student @ University of Waterloo** · 98% average · Dean's Scholar · Bilingual EN/FR
 
-I build things at the intersection of software and hardware — from autonomous robots to full-stack business tools. Currently seeking co-op opportunities.
+I build things at the intersection of software, hardware, and controls — from rocket firmware to production-line HMIs and full-stack business tools. Currently on co-op as a Controls Programming Student at Innovative Automation, and on the Controls Subteam at Waterloo Rocketry.
 
 ---
 
 ### 🛠 Tech Stack
-**Languages:** Java · Python · C/C++ · C# · JavaScript · HTML/CSS · SQL  
-**Tools:** Blazor/.NET · Azure DevOps · SolidWorks · AutoCAD · 3D Printing · GitHub
+**Languages:** C · C++ · C# · Java · Python · JavaScript · Bash · Excel VBA  
+**Firmware:** FreeRTOS · STM32 · CAN · UART · I2C · GoogleTest · Fake Function Framework  
+**Automation:** Studio 5000 · FactoryTalk · OPC UA · Weintek HMI  
+**Tools:** .NET/Blazor · Docker · Git · Azure DevOps · SolidWorks · AutoCAD · 3D Printing
 
 ---
 
-### 🤖 Featured Project
+### 🚀 Featured Work
+**Waterloo Rocketry — Controls Subteam**  
+Firmware for the rocket's canards: redesigned the error log system (128 → 32 bytes per entry), built FreeRTOS motor telemetry over CAN, and wrote GoogleTest + FFF unit tests in Docker for STM32H733 firmware.
+
 **[Autonomous Tic-Tac-Toe Robot](https://github.com/maximbeauc/Autonomous-Tic-Tac-Toe-Robot-Logic)** — UW MTE 100  
-Designed in SolidWorks, fabricated with 3D printing, integrated colour sensors and motor control, and programmed in C++. Achieved a **0% loss rate** against human opponents.
+Designed in SolidWorks, fabricated with 3D printing, integrated colour sensing and motor control, and programmed in C++. Achieved a **0% loss rate** across 50 games.
 
 ---
 
